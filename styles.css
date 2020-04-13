@@ -78,6 +78,7 @@ li { list-style: none; }
 /* Navbar */
 .navbar {
     position: relative;
+    background-color: #fff;
     height: 70px;
     padding: 0 7vw;
     z-index: 2;
@@ -227,10 +228,10 @@ button:focus { outline: none; }
 
 /* Links on Bottom */
 .resource-links {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 5%;
-    position: relative;
     z-index: 2;
 }
 .resource-links li { padding-bottom: 15px; }
@@ -253,12 +254,21 @@ button:focus { outline: none; }
     }
 
     .mobile__nav { display: block; }
+
+    /* --------- JS Toggle Attributes ----------*/
     .show .hamburger { display: none; }
     .show .close-out { display: block; }
     .show .navbar__links { transform: translateX(0); }
+    .show .btn, 
+    .show .footer { z-index: -1; }
+    /* ---------------------------------------- */
 
+    .navbar {
+        position: fixed;
+        width: 100vw;
+    }
     .navbar__links {
-        position: absolute;
+        position: fixed;
         flex-direction: column;
         justify-content: start;
         text-align: center;
